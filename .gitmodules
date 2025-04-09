@@ -1,0 +1,3 @@
+[submodule "find_sex_loci"]
+	path = find_sex_loci
+	url = https://github.com/lyl8086/find_sex_loci.git
