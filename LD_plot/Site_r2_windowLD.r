@@ -1,0 +1,16 @@
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+
+argv <- commandArgs(TRUE)
+
+l <- read.table(argv[1],header=T)
+l <- mutate(l,w1=floor(POS1/100000))
+l <- mutate(l,w2=floor(POS2/100000))
+l <- mutate(l,p=paste(w1,w2,sep="_"))
+d <- l %>% group_by(p) %>% summarise(percentile=quantile(R.2,0.98,na.rm=T))
+d1<-separate(d,p,into=c("w1","w2"),sep="_")
+d1$w1 <- as.numeric(d1$w1)
+d1$w2 <- as.numeric(d1$w2)
+d1 <- arrange(d1,w1,w2)
+write.table(d1,file="Win_LD",quote=F,row.names=F,sep="\t")
