@@ -35,5 +35,5 @@ The output file hli.fa contains genome sequences with chromosome IDs consistent 
 hge: Northern Hyporhamphus gernaerti
 hli: Hyporhamphus limbatus
 shge: Southern Hyporhamphus gernaerti
-xhge: X haplotype of male H. gernaerti
-yhge: Y haplotype of male H. gernaerti
+xhge: X haplotype of male Northern H. gernaerti
+yhge: Y haplotype of male Northern H. gernaerti
